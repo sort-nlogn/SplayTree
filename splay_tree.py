@@ -124,7 +124,9 @@ def split_(t: Node, x):
     return t1, t2
 
 
-def add(t: Node, data, key):
+def add(t: Node, key, data):
+    if not t:
+        return Node(data, key)
     t1, t2 = split_(t, key)
     v = Node(key, data, t1, t2)
     if t1:
@@ -143,8 +145,3 @@ def remove_(t: Node, x):
     elif not v.right:
         return v.left
     return merge(v.left, v.right)
-
-t = Node(10, "10")
-a = [5, 11, 22, 48, 2]
-for el in a:
-    t = add(t, str(el), el)
