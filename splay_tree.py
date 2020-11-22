@@ -137,8 +137,3 @@ def add(t: Node, data, key):
 def remove_(t: Node, x):
     v = find(t, x)
     return merge(v.left, v.right)
-
-t = Node(10, "10")
-a = [5, 11, 22, 48, 2]
-for el in a:
-    t = add(t, str(el), el)
